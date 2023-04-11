@@ -6,7 +6,19 @@
 <script>
 export default {
   name: 'GroceryList',
-  props: {
+  data: () => ({
+    items: [], 
+    ItemInput: ''
+  }), 
+  methods: {
+    addItem(){
+      let itemList = [...this.items, this.ItemInput]
+      this.items = itemList
+      this.ItemInput = ''
+    }, 
+    handleChange(e){
+      this.ItemInput = e.target.value
+    }
   }
 }
 </script>

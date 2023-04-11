@@ -1,17 +1,20 @@
 <template>
   <div id="app">  
     <img alt="Vue logo" src="./assets/logo.png">
+    <GroceryInput />
     <GroceryList />
   </div>
 </template>
 
 <script>
 import GroceryList from './components/GroceryList.vue'
+import GroceryInput from './components/GroceryInput.vue'
 
 export default {
   name: 'App',
   components: {
-    GroceryList
+    GroceryList,
+    GroceryInput
   }
 }
 </script>
