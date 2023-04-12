@@ -1,14 +1,19 @@
 <template>
   <div>
-    <label>Groceries: </label>
+    <h2>Food Flow</h2>
+    <h5>Grocery List</h5>
     <input v-on:input="handleChange" type="text" :value="ItemInput" placeholder="Add a Grocery Item">
-    <button type="submit" @click="addItem">Add Item</button>
+    <button class="add" type="submit" @click="addItem">Add</button>
     <ul>
       <li v-for="item, index in items" :key="index">
         {{ item }}
-        <button type="button" @click="removeItem(index)">X</button>
+        <button class="remove" type="button" @click="removeItem(index)">
+<span>&#10003;</span></button>
       </li>
     </ul>
+    <section>
+      <button @click="clearAll"> Clear All</button>
+    </section>
   </div>
 
 </template>
@@ -31,6 +36,9 @@ export default {
     }, 
     removeItem(index){
       this.items.splice(index, 1)
+    }, 
+    clearAll(){
+      this.items = []
     }
   }
 }
@@ -38,4 +46,13 @@ export default {
 
 
 <style>
+li {
+  list-style: none;
+}
+.add {
+  margin-left: 1vw;
+}
+.remove {
+  margin-left: 1vw;
+}
 </style>
