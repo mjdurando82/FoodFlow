@@ -1,8 +1,11 @@
 <template>
-  <div id="app">  
-    <GroceryList handleChange="handleChange"/>
-    <MealList />
-  </div>
+  <div id="app">
+    <h2>Food Flow</h2>
+    <div class="list-container">
+      <GroceryList handleChange="handleChange"/>
+      <MealList />
+    </div>
+  </div>  
 </template>
 
 <script>
@@ -14,19 +17,13 @@ export default {
   components: {
     GroceryList,
     MealList
-  },
-  methods: {
-    addItem(){
-      let itemList = [...this.items, this.ItemInput]
-      this.items = itemList
-      this.ItemInput = ''
-    }, 
-    handleChange(e){
-      this.ItemInput = e.target.value
-    }
   }
 }
 </script>
 
 <style>
+.list-container {
+  display: flex;
+  justify-content: space-evenly;
+}
 </style>

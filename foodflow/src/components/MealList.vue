@@ -1,14 +1,14 @@
 <template>
   <div>
     <h5>Meal List</h5>
-    <div class="add-item-container">
+    <div class="add-meal-container">
       <input v-on:input="handleChange" type="text" :value="mealInput" placeholder="Add a Meal" class="add-item-input">
       <button class="add-item-btn" type="submit" @click="addMeal">Add</button>
     </div>
     <ul class="meal-list">
       <li v-for="(meal, index) in meals" :key="index" >
         <input type="checkbox" class="checkbox">
-        <span class="meal-name">{{ meals }}</span>
+        <span class="meal-name">{{ meal }}</span>
         <button class="remove-meal" @click="removeMeal(index)">&#9747;</button>
       </li>
     </ul>
@@ -49,18 +49,18 @@ export default {
 li {
   list-style: none;
 }
-.add-item-container {
+.add-meal-container {
   display: flex;
   margin-bottom: 1rem;
 }
-.add-item-input {
+.add-meal-input {
   flex: 1;
   padding: 0.5rem;
   border: none;
   border-bottom: 1px solid #000;
   font-size: 16px;
 }
-.add-item-btn {
+.add-meal-btn {
   margin-left: 1rem;
   background-color: #007bff;
   color: #fff;
@@ -68,7 +68,7 @@ li {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
-.add-item-btn:hover {
+.add-meal-btn:hover {
   background-color: #1c62ad;
 }
 .meal-list {
@@ -81,7 +81,7 @@ li {
 .checkbox {
   margin-right: 1rem;
 }
-.remove-item {
+.remove-meal {
   margin-left: 1rem;
   color: red;
   cursor: pointer;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Food Flow</h2>
+    <h5>Grocery List</h5>
     <div class="add-item-container">
       <input v-on:input="handleChange" type="text" :value="ItemInput" placeholder="Add a Grocery Item" class="add-item-input">
       <button class="add-item-btn" type="submit" @click="addItem">Add</button>
