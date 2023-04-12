@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="meals">
     <h5>Meal List</h5>
     <div class="add-meal-container">
       <input v-on:input="handleChange" type="text" :value="mealInput" placeholder="Add a Meal" class="add-item-input">
@@ -7,7 +7,6 @@
     </div>
     <ul class="meal-list">
       <li v-for="(meal, index) in meals" :key="index" >
-        <input type="checkbox" class="checkbox">
         <span class="meal-name">{{ meal }}</span>
         <button class="remove-meal" @click="removeMeal(index)">&#9747;</button>
       </li>
@@ -98,5 +97,11 @@ li {
 }
 .clear-all-btn:hover {
   background-color: #b41a2a;
+}
+.meals {
+  background-color: rgb(29, 143, 73);
+  border: solid 2px #283398;
+  border-radius: 2rem;
+  padding: 1rem;
 }
 </style>

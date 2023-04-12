@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: rgb(159, 141, 125);
+}
 .list-container {
   display: flex;
   justify-content: space-evenly;

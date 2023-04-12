@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="groceries">
     <h5>Grocery List</h5>
     <div class="add-item-container">
       <input v-on:input="handleChange" type="text" :value="ItemInput" placeholder="Add a Grocery Item" class="add-item-input">
@@ -49,6 +49,9 @@ export default {
 li {
   list-style: none;
 }
+input {
+  border-radius: 1rem;
+}
 .add-item-container {
   display: flex;
   margin-bottom: 1rem;
@@ -67,6 +70,7 @@ li {
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  border-radius: 10rem;
 }
 .add-item-btn:hover {
   background-color: #1c62ad;
@@ -95,8 +99,15 @@ li {
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  border-radius: 10rem;
 }
 .clear-all-btn:hover {
   background-color: #b41a2a;
+}
+.groceries {
+  background-color: #1a69be;
+  border: solid 2px #0d953c;
+  border-radius: 2rem;
+  padding: 1rem;
 }
 </style>
