@@ -1,20 +1,26 @@
 <template>
   <div id="app">  
-    <img alt="Vue logo" src="./assets/logo.png">
-    <GroceryInput />
-    <GroceryList />
+    <GroceryList handleChange="handleChange"/>
   </div>
 </template>
 
 <script>
 import GroceryList from './components/GroceryList.vue'
-import GroceryInput from './components/GroceryInput.vue'
 
 export default {
   name: 'App',
   components: {
-    GroceryList,
-    GroceryInput
+    GroceryList
+  },
+  methods: {
+    addItem(){
+      let itemList = [...this.items, this.ItemInput]
+      this.items = itemList
+      this.ItemInput = ''
+    }, 
+    handleChange(e){
+      this.ItemInput = e.target.value
+    }
   }
 }
 </script>
