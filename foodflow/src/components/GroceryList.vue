@@ -1,18 +1,18 @@
 <template>
   <div class="groceries">
-    <h5>Grocery List</h5>
+    <h5 class="grocery-list-title">Grocery List</h5>
     <div class="add-item-container">
       <input v-on:input="handleChange" type="text" :value="ItemInput" placeholder="Add a Grocery Item" class="add-item-input">
       <button class="add-item-btn" type="submit" @click="addItem">Add</button>
     </div>
     <ul class="grocery-list">
-      <li v-for="(item, index) in items" :key="index" :class="{ 'checked': item.checked }">
+      <li class="grocery-item" v-for="(item, index) in items" :key="index" :class="{ 'checked': item.checked }">
         <input type="checkbox" v-model="item.checked" class="checkbox">
         <span class="item-name">{{ item.name }}</span>
         <button class="remove-item" @click="removeItem(index)">&#9747;</button>
       </li>
     </ul>
-    <section>
+    <section class="clear-all-container">
       <button class="clear-all-btn" @click="clearAll">Clear All</button>
     </section>
   </div>
@@ -52,6 +52,11 @@ li {
 input {
   border-radius: 1rem;
 }
+.grocery-list-title {
+  color: #fff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 .add-item-container {
   display: flex;
   margin-bottom: 1rem;
@@ -62,6 +67,8 @@ input {
   border: none;
   border-bottom: 1px solid #000;
   font-size: 16px;
+  background-color: #fff;
+  color: #000;
 }
 .add-item-btn {
   margin-left: 1rem;
@@ -78,9 +85,15 @@ input {
 .grocery-list {
   margin-top: 1rem;
 }
+.grocery-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
 .item-name {
   margin-left: 1rem;
   flex: 1;
+  color: #fff;
 }
 .checkbox {
   margin-right: 1rem;
@@ -92,6 +105,11 @@ input {
 }
 .checked {
   text-decoration: line-through;
+}
+.clear-all-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 .clear-all-btn {
   background-color: #dc3545;
@@ -105,8 +123,8 @@ input {
   background-color: #b41a2a;
 }
 .groceries {
-  background-color: #1a69be;
-  border: solid 2px #0d953c;
+  background-color: rgba(255, 68, 0, 0.645);
+  border: solid 2px rgba(255, 255, 0, 0.622);
   border-radius: 2rem;
   padding: 1rem;
 }

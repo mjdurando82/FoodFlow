@@ -1,17 +1,17 @@
 <template>
   <div class="meals">
-    <h5>Meal List</h5>
+    <h5 class="meal-list-title">Meal List</h5>
     <div class="add-meal-container">
-      <input v-on:input="handleChange" type="text" :value="mealInput" placeholder="Add a Meal" class="add-item-input">
-      <button class="add-item-btn" type="submit" @click="addMeal">Add</button>
+      <input v-on:input="handleChange" type="text" :value="mealInput" placeholder="Add a Meal" class="add-meal-input">
+      <button class="add-meal-btn" type="submit" @click="addMeal">Add</button>
     </div>
     <ul class="meal-list">
-      <li v-for="(meal, index) in meals" :key="index" >
+      <li v-for="(meal, index) in meals" :key="index" class="meal-item">
         <span class="meal-name">{{ meal }}</span>
         <button class="remove-meal" @click="removeMeal(index)">&#9747;</button>
       </li>
     </ul>
-    <section>
+    <section class="clear-all-container">
       <button class="clear-all-btn" @click="clearAll">Clear All</button>
     </section>
   </div>
@@ -48,17 +48,30 @@ export default {
 li {
   list-style: none;
 }
+input {
+  border-radius: 1rem;
+}
+.meal-list-title {
+  color: #fff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 .add-meal-container {
   display: flex;
   margin-bottom: 1rem;
 }
+
 .add-meal-input {
   flex: 1;
   padding: 0.5rem;
   border: none;
   border-bottom: 1px solid #000;
   font-size: 16px;
+  background-color: #fff;
+  color: #000;
 }
+
 .add-meal-btn {
   margin-left: 1rem;
   background-color: #007bff;
@@ -66,28 +79,45 @@ li {
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  border-radius: 10rem;
 }
+
 .add-meal-btn:hover {
   background-color: #1c62ad;
 }
+
 .meal-list {
   margin-top: 1rem;
 }
+
+.meal-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
 .meal-name {
   margin-left: 1rem;
   flex: 1;
+  color: #fff;
 }
-.checkbox {
-  margin-right: 1rem;
-}
+
 .remove-meal {
   margin-left: 1rem;
   color: red;
   cursor: pointer;
 }
-.checked {
-  text-decoration: line-through;
+
+.remove-meal:hover {
+  color: #ff0000;
 }
+
+.clear-all-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 .clear-all-btn {
   background-color: #dc3545;
   color: #fff;
@@ -95,9 +125,11 @@ li {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
+
 .clear-all-btn:hover {
   background-color: #b41a2a;
 }
+
 .meals {
   background-color: rgb(29, 143, 73);
   border: solid 2px #283398;
