@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h2>Food Flow</h2>
+    <h5>Meal List</h5>
     <div class="add-item-container">
-      <input v-on:input="handleChange" type="text" :value="ItemInput" placeholder="Add a Grocery Item" class="add-item-input">
-      <button class="add-item-btn" type="submit" @click="addItem">Add</button>
+      <input v-on:input="handleChange" type="text" :value="mealInput" placeholder="Add a Meal" class="add-item-input">
+      <button class="add-item-btn" type="submit" @click="addMeal">Add</button>
     </div>
-    <ul class="grocery-list">
-      <li v-for="(item, index) in items" :key="index" :class="{ 'checked': item.checked }">
-        <input type="checkbox" v-model="item.checked" class="checkbox">
-        <span class="item-name">{{ item.name }}</span>
-        <button class="remove-item" @click="removeItem(index)">&#9747;</button>
+    <ul class="meal-list">
+      <li v-for="(meal, index) in meals" :key="index" >
+        <input type="checkbox" class="checkbox">
+        <span class="meal-name">{{ meals }}</span>
+        <button class="remove-meal" @click="removeMeal(index)">&#9747;</button>
       </li>
     </ul>
     <section>
@@ -20,26 +20,26 @@
 
 <script>
 export default {
-  name: 'GroceryList',
+  name: 'MealList',
   data: () => ({ 
-    ItemInput: '',
-    items: []
+    mealInput: '',
+    meals: []
   }),
   methods: {
     handleChange(e) {
-      this.ItemInput = e.target.value
+      this.mealInput = e.target.value
     },
-    addItem() {
-      if (this.ItemInput !== '') {
-        this.items.push({ name: this.ItemInput, checked: false })
-        this.ItemInput = ''
+    addMeal() {
+      if (this.mealInput !== '') {
+        this.meals.push(this.mealInput)
+        this.mealInput = ''
       }
     }, 
-    removeItem(index) {
-      this.items.splice(index, 1)
+    removeMeal(index) {
+      this.meals.splice(index, 1)
     }, 
     clearAll() {
-      this.items = []
+      this.meals = []
     }
   }
 }
@@ -71,10 +71,10 @@ li {
 .add-item-btn:hover {
   background-color: #1c62ad;
 }
-.grocery-list {
+.meal-list {
   margin-top: 1rem;
 }
-.item-name {
+.meal-name {
   margin-left: 1rem;
   flex: 1;
 }
