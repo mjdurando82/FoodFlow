@@ -49,12 +49,13 @@ export default {
 <style>
 li {
   list-style: none;
+
 }
 input {
   border-radius: 1rem;
 }
 .grocery-list-title {
-  color: #fff;
+  color: #000000;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -92,42 +93,36 @@ input {
   align-items: center;
   margin-bottom: 0.5rem;
 }
+
 .item-name {
   margin-left: 1rem;
   flex: 1;
-  color: #fff;
+  color: black;
+  padding-top: 0.1rem;
+  font-family:monospace;
+
 }
+
 .checkbox {
   margin-right: 1rem;
 }
+
 .remove-item {
   margin-left: 1rem;
   color: red;
   cursor: pointer;
 }
+
 .checked {
   text-decoration: line-through;
+  color: green;
 }
-.clear-all-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-.clear-all-btn {
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 10rem;
-}
-.clear-all-btn:hover {
-  background-color: #b41a2a;
-}
+
 .groceries {
-  background-color: rgba(26, 25, 25, 0.645);
-  border: solid .25rem #2f833c94;
+  background-image: url(https://i.pinimg.com/originals/6f/a6/61/6fa6616ba2cdc63d1f4f34ae06006bd0.png);
+  background-size: cover;
   border-radius: 2rem;
   padding: 1rem;
+  background-color: #f9f9f9;
 }
 </style>

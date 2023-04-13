@@ -52,7 +52,7 @@ input {
   border-radius: 1rem;
 }
 .meal-list-title {
-  color: #fff;
+  color: #000000;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -100,7 +100,9 @@ input {
 .meal-name {
   margin-left: 1rem;
   flex: 1;
-  color: #fff;
+  color: black;
+  padding-top: 0.2rem;
+  font-family:monospace;
 }
 
 .remove-meal {
@@ -132,9 +134,10 @@ input {
 }
 
 .meals {
-  background-color: rgba(26, 25, 25, 0.645);
-  border: solid .25rem #2f833c94;
+background-image: url(https://i.pinimg.com/originals/6f/a6/61/6fa6616ba2cdc63d1f4f34ae06006bd0.png);
+  background-size: cover;
   border-radius: 2rem;
   padding: 1rem;
+  background-color: #f9f9f9;
 }
 </style>
