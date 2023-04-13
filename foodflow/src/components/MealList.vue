@@ -60,6 +60,7 @@ input {
 .add-meal-container {
   display: flex;
   margin-bottom: 1rem;
+  width: 30vw;
 }
 
 .add-meal-input {
@@ -74,7 +75,7 @@ input {
 
 .add-meal-btn {
   margin-left: 1rem;
-  background-color: #007bff;
+  background-color: #2f833c94;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -83,7 +84,7 @@ input {
 }
 
 .add-meal-btn:hover {
-  background-color: #1c62ad;
+  background-color: #139f50;
 }
 
 .meal-list {
@@ -131,8 +132,8 @@ input {
 }
 
 .meals {
-  background-color: rgb(29, 143, 73);
-  border: solid 2px #283398;
+  background-color: rgba(26, 25, 25, 0.645);
+  border: solid .25rem #2f833c94;
   border-radius: 2rem;
   padding: 1rem;
 }

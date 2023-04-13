@@ -5,13 +5,14 @@
       <input v-on:input="handleChange" type="text" :value="ItemInput" placeholder="Add a Grocery Item" class="add-item-input">
       <button class="add-item-btn" type="submit" @click="addItem">Add</button>
     </div>
-    <ul class="grocery-list">
-      <li class="grocery-item" v-for="(item, index) in items" :key="index" :class="{ 'checked': item.checked }">
-        <input type="checkbox" v-model="item.checked" class="checkbox">
-        <span class="item-name">{{ item.name }}</span>
-        <button class="remove-item" @click="removeItem(index)">&#9747;</button>
-      </li>
-    </ul>
+<ul class="grocery-list">
+  <li class="grocery-item" v-for="(item, index) in items" :key="index">
+    <input type="checkbox" v-model="item.checked" class="checkbox">
+    <span class="item-name" :class="{ 'checked': item.checked }">{{ item.name }}</span>
+    <button class="remove-item" @click="removeItem(index)">&#9747;</button>
+  </li>
+</ul>
+
     <section class="clear-all-container">
       <button class="clear-all-btn" @click="clearAll">Clear All</button>
     </section>
@@ -60,6 +61,7 @@ input {
 .add-item-container {
   display: flex;
   margin-bottom: 1rem;
+  width: 30vw;
 }
 .add-item-input {
   flex: 1;
@@ -72,7 +74,7 @@ input {
 }
 .add-item-btn {
   margin-left: 1rem;
-  background-color: #007bff;
+  background-color: #2f833c94;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
@@ -80,7 +82,7 @@ input {
   border-radius: 10rem;
 }
 .add-item-btn:hover {
-  background-color: #1c62ad;
+  background-color: #139f50;
 }
 .grocery-list {
   margin-top: 1rem;
@@ -123,8 +125,8 @@ input {
   background-color: #b41a2a;
 }
 .groceries {
-  background-color: rgba(255, 68, 0, 0.645);
-  border: solid 2px rgba(255, 255, 0, 0.622);
+  background-color: rgba(26, 25, 25, 0.645);
+  border: solid .25rem #2f833c94;
   border-radius: 2rem;
   padding: 1rem;
 }
