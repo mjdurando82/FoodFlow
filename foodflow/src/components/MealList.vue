@@ -122,9 +122,9 @@ input {
 }
 
 .clear-all-btn {
-  background-color: #dc3545;
+  background-color: #dc3546c1;
   color: #fff;
-  border: none;
+  border-radius: 10rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
